@@ -1,0 +1,175 @@
+/* Estilo geral */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0d0d0d, #3b0029);
+    color: #fff;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Cabeçalho */
+h1 {
+    margin: 20px 0;
+    font-size: 2.8em;
+    color: #a10035;
+    text-shadow: 0 0 10px rgba(161, 0, 53, 0.8);
+}
+
+/* Formulário de pesquisa */
+label {
+    font-size: 1.2em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 10px 15px;
+    width: 300px;
+    border: 2px solid #a10035;
+    background-color: #1a1a1a;
+    color: #fff;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+input:focus {
+    border-color: #ff1e56;
+    box-shadow: 0 0 10px rgba(255, 30, 86, 0.8);
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #a10035;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #ff1e56;
+    box-shadow: 0 0 15px rgba(255, 30, 86, 0.8);
+}
+
+/* Galeria - Ajuste para cards lado a lado */
+#galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    width: 90%;
+    max-width: 1400px;
+    margin: 30px auto;
+}
+
+/* Cartão do jogo */
+.jogo {
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 300px;
+    height: 200px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+/* Borda animada */
+.jogo::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #a10035, #ff1e56, #a10035);
+    z-index: 0;
+    border-radius: 12px;
+    animation: borderMove 3s linear infinite;
+}
+
+@keyframes borderMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+.jogo::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: #0d0d0d;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+/* Conteúdo */
+.jogo img, .jogo h2, .jogo p {
+    position: relative;
+    z-index: 2;
+}
+
+.jogo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 3px solid transparent;
+    background: linear-gradient(45deg, #a10035, #ff1e56);
+    padding: 3px;
+    box-shadow: 0 0 10px rgba(255, 30, 86, 0.8);
+    transition: transform 0.3s;
+}
+
+.jogo img:hover {
+    transform: scale(1.05);
+}
+
+.jogo .info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: left;
+}
+
+.jogo h2 {
+    font-size: 1.6em;
+    margin: 0 0 10px;
+    color: #ff1e56;
+}
+
+.jogo p {
+    font-size: 1em;
+    color: #ddd;
+    line-height: 1.5;
+}
+
+/* Hover */
+.jogo:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 30px rgba(255, 30, 86, 0.8);
+}
+
+/* Rodapé */
+footer {
+    margin-top: auto;
+    padding: 10px;
+    color: #888;
+    font-size: 0.9em;
+}
